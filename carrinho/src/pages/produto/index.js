@@ -1,4 +1,5 @@
-import { Container } from './style'
+import { Container } from './style';
+import { Link } from 'react-router-dom';
 
 
 export default function Produto(props) {
@@ -8,7 +9,14 @@ export default function Produto(props) {
             <div className="titulo">{props.informacao.titulo}</div>
             <div className="preco">{props.informacao.preco}</div>
             
-            <button>Ver detalhes</button>
+
+            <Link to={{
+                pathname: "/detalhe",
+                state: props.informacao
+            }}>
+                <button>Ver detalhes</button>
+            </Link>
+            
         </Container>
     )
 }

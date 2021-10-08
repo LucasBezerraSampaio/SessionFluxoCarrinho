@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link, Switch, BrowserRouter} from 'react-router-dom'
+import {Route, Switch, BrowserRouter} from 'react-router-dom'
 
 import './index.css';
 import App from './pages/home';
+import DetalheProduto from './pages/detalheProduto';
+import Carrinho from './pages/carrinho'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-        <Link to="/" exact={true} component={App} />
+        <Route path="/" exact={true} component={App} />
+        <Route path="/detalhe" component={DetalheProduto} />
+        <Route path="/carrinho" component={Carrinho} />
+        
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,
